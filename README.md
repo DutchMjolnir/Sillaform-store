@@ -55,12 +55,15 @@ npm start
 NEXT_PUBLIC_APP_NAME=SillaForma
 ```
 
-## Despliegue en Vercel
+## Ejecución y entrega
 
-1. Publicar el proyecto en GitHub.
-2. Importar el repositorio en Vercel.
-3. Crear `NEXT_PUBLIC_APP_NAME` como variable de entorno.
-4. Desplegar.
-5. Agregar aquí la URL final: `PENDIENTE_DE_DESPLIEGUE`.
+La aplicación fue validada localmente mediante:
 
-La bitácora completa está disponible en `VIBE_CODING.md`.
+```text
+npm run lint
+npm run build
+npm run dev
+
+Para esta entrega académica, el código fuente y la documentación del proceso se encuentran en este repositorio. No se requiere un despliegue público.
+
+La bitácora completa está disponible en VIBE_CODING.md.
