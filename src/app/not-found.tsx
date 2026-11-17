@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <div className="py-24 text-center"><p className="text-7xl">◒</p><h1 className="mt-6 text-4xl font-black">No encontramos esa silla</h1><p className="mt-3 text-stone-600">El modelo no existe o ya no forma parte del catálogo.</p><Link href="/chairs" className="mt-8 inline-block rounded-xl bg-[#17201c] px-6 py-3 font-bold text-white">Volver al catálogo</Link></div>}

@@ -1,0 +1,3 @@
+import { ProductExplorer } from "@/components/ProductExplorer";
+export const metadata={title:"Sillas"};
+export default function ChairsPage(){return <><header className="mb-10"><p className="text-sm font-bold uppercase tracking-widest text-[#c96f3b]">Catálogo</p><h1 className="mt-2 text-4xl font-black">Encuentra tu próxima silla</h1><p className="mt-3 max-w-2xl text-stone-600">Filtra por categoría, disponibilidad o nombre. La información se obtiene desde una API interna de la aplicación.</p></header><ProductExplorer/></>}

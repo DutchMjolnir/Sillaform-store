@@ -1,0 +1,3 @@
+import { NextRequest,NextResponse } from "next/server";
+import { getProducts,normalizeText } from "@/lib/products";
+export async function GET(request:NextRequest){try{const search=request.nextUrl.searchParams.get("search")??"";const category=request.nextUrl.searchParams.get("category")??"";const products=getProducts().filter(product=>normalizeText(product.name).includes(normalizeText(search))&&(!category||normalizeText(product.category)===normalizeText(category)));return NextResponse.json({products,count:products.length})}catch{return NextResponse.json({message:"No se pudo obtener el catálogo."},{status:500})}}

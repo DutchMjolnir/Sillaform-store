@@ -1,0 +1,4 @@
+"use client";
+import { useEffect,useState } from "react";
+import { readFavoriteIds,saveFavoriteIds } from "@/lib/favorites";
+export function FavoriteButton({productId}:{productId:number}){const[favorite,setFavorite]=useState(false);useEffect(()=>setFavorite(readFavoriteIds().includes(productId)),[productId]);function toggle(){const current=readFavoriteIds();const next=current.includes(productId)?current.filter(id=>id!==productId):[...current,productId];saveFavoriteIds(next);setFavorite(next.includes(productId));}return <button onClick={toggle} aria-pressed={favorite} className="rounded-full border border-black/15 bg-white/80 px-3 py-2 text-sm font-semibold hover:bg-white">{favorite?"★ Guardada":"☆ Guardar"}</button>}

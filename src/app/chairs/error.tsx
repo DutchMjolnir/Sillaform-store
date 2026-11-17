@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <div className="rounded-3xl border border-red-300 bg-red-50 p-10 text-center"><h2 className="text-2xl font-black">No pudimos abrir el catálogo</h2><p className="mt-3 text-stone-600">Ocurrió un problema inesperado. Intenta cargar la página nuevamente.</p><button onClick={reset} className="mt-6 rounded-xl bg-red-700 px-5 py-3 font-bold text-white">Intentar otra vez</button></div>}

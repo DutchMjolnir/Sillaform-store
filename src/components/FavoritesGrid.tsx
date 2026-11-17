@@ -1,0 +1,6 @@
+"use client";
+import { useEffect,useState } from "react";
+import { FAVORITES_EVENT,readFavoriteIds } from "@/lib/favorites";
+import type { Product } from "@/types/product";
+import { ProductCard } from "./ProductCard";
+export function FavoritesGrid({products}:{products:Product[]}){const[ids,setIds]=useState<number[]>([]);useEffect(()=>{const sync=()=>setIds(readFavoriteIds());sync();addEventListener(FAVORITES_EVENT,sync);addEventListener("storage",sync);return()=>{removeEventListener(FAVORITES_EVENT,sync);removeEventListener("storage",sync)}},[]);const favorites=products.filter(product=>ids.includes(product.id));if(!favorites.length)return <div className="rounded-3xl border border-dashed border-black/20 p-12 text-center"><p className="text-5xl">☆</p><h2 className="mt-4 text-2xl font-black">Aún no guardaste sillas</h2><p className="mt-2 text-stone-600">Marca tus modelos favoritos para compararlos después.</p></div>;return <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{favorites.map(product=><ProductCard product={product} key={product.id}/>)}</div>}

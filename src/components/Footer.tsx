@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="mt-20 border-t border-black/10 bg-[#17201c] px-5 py-10 text-center text-sm text-stone-300"><p className="font-bold text-white">SillaForma</p><p className="mt-2">Proyecto académico desarrollado con Next.js, TypeScript y Vibe Coding.</p></footer>}
